@@ -178,8 +178,8 @@ def download_nltk_data():
 @st.cache_resource
 def load_models():
     try:
-        model = joblib.load("final_model(XGBoost).pkl")
-        vectorizer = joblib.load("vectorizer.pkl")
+        model = joblib.load("final_model(XGBoost).pkl","rb")
+        vectorizer = joblib.load("vectorizer.pkl","rb")
         return model, vectorizer
     except Exception as e:
         st.error(f"Error loading model or vectorizer: {e}")
